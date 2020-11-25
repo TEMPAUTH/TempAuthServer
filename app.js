@@ -29,6 +29,3 @@ router.route('/process/delegate/I').post();
 
 // this is 자현 방가방가
 
-/////this is 나현현
-
-// 15시 57분. 제발 시작하고 싶다.
