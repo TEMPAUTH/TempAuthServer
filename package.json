@@ -1,0 +1,22 @@
+{
+  "name": "tempauthserver",
+  "version": "1.0.0",
+  "description": "협업을 할 때마다, 컨벤션의 중요성을 느끼고 있다. 따라서 일단 git/github Convention을 정의하고 지키려한다.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TEMPAUTH/TempAuthServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TEMPAUTH/TempAuthServer/issues"
+  },
+  "homepage": "https://github.com/TEMPAUTH/TempAuthServer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
