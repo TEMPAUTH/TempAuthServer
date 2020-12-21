@@ -1,5 +1,9 @@
 var express=require('express'), http = require('http');
 
+// ===== Passport 사용 ===== //
+var passport = require('passport');
+var flash = require('connect-flash');
+
 //익스프레스 객체 생성
 var app = express();
 
@@ -20,5 +24,8 @@ http.createServer(app).listen(app.get('port'), function(){
 router.route('/process/idSearch').post();
 
 
-
+// ===== Passport 초기화 ===== //
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
