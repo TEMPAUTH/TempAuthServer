@@ -49,8 +49,8 @@ var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
-    password : '00000',
-    database : 'test',
+    password : '1111',
+    database : 'tempauthdb',
     debug : false
 });
 
