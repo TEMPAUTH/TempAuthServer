@@ -28,4 +28,3 @@ router.route('/process/idSearch').post();
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-

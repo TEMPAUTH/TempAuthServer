@@ -14,7 +14,7 @@ var bodyParser = require('body-parser')
 var expressErrorHandler = require('express-error-handler');
 
 // Session 미들웨어 불러오기
-var expressErrorSession = require('express-session');
+var expressSession = require('express-session');
 
 // 익스프레스 객체 생성
 var app = express();
