@@ -7,7 +7,9 @@ module.exports  = function(app, passport){
         clientSecret : config.facebook.clientSecret,
         callbackURL : config.facebok.callbackURL
     }, function(accessToken, refreshToken, profile, done){
-        console.log('passport의 facebook 호출됨.');
+        console.log('passport의 facebook 호출됨.'); 
+
+        
         console.dir(profile);
 
         var options = {
