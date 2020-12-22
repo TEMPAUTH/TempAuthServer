@@ -45,7 +45,7 @@ app.use(expressSession({
 var mysql = require('mysql');
 
 //===== MySQL 데이터베이스를 연결 설정 ===== //
-var con = mysql.createConnection({
+var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
@@ -55,10 +55,9 @@ var con = mysql.createConnection({
 });
 
 //TEST :: user T 데이터 가져오기
-con.connect(function(err) {
+pool.getConnection(function(err,con) {
     if (!err)
     console.log("Connected!");
-
     var sql ='SELECT * from user';
     con.query(sql,function(error,results){
         if(error){
@@ -68,7 +67,7 @@ con.connect(function(err) {
             console.log('results',results);
         }
     })
-    con.end();
+    con.release();
   });
 
 // 라우터 객체 참조
