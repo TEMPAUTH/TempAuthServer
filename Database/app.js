@@ -45,7 +45,7 @@ app.use(expressSession({
 var mysql = require('mysql');
 
 //===== MySQL 데이터베이스를 연결 설정 ===== //
-var pool = mysql.createPool({
+var con = mysql.createConnection({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
@@ -54,12 +54,28 @@ var pool = mysql.createPool({
     debug : false
 });
 
+//TEST :: user T 데이터 가져오기
+con.connect(function(err) {
+    if (!err)
+    console.log("Connected!");
+
+    var sql ='SELECT * from user';
+    con.query(sql,function(error,results){
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log('results',results);
+        }
+    })
+    con.end();
+  });
+
 // 라우터 객체 참조
 var router = express.Router();
 
 // 라우터 객체 등록
 app.use('/', router);
-
 
 // ===== 404 오류 페이지 처리 ===== //
 var errorHandler = expressErrorHandler({
