@@ -56,18 +56,20 @@ var pool = mysql.createPool({
 
 //TEST :: user T 데이터 가져오기
 pool.getConnection(function(err,con) {
-    if (!err)
+    if (err){
+        console.log(err);
+    }
     console.log("Connected!");
-    var sql ='SELECT * from user';
-    con.query(sql,function(error,results){
-        if(error){
-            console.log(error);
+    con.query('SELECT * from user',function(err,results){
+        if(err){
+            console.log(err);
+            con.release();
         }
         else{
             console.log('results',results);
+            con.release();
         }
     })
-    con.release();
   });
 
 // 라우터 객체 참조
